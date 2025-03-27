@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Marcos Alves Portifólio</title>
   </head>
   <body>
-    <nav class="__navigation">
-      <div class="__navigation_img">
+    <nav class="navigation">
+      <div class="navigation_img">
         <a href="#"><img src="#" alt="logo" /></a>
       </div>
-      <ul class="__navigation_menu">
+      <ul class="navigation_menu">
         <li><a href="#">Sobre mim</a></li>
         <li><a href="#">Projeto</a></li>
         <li><a href="#">Conhecimentos</a></li>
@@ -19,52 +20,70 @@
       </ul>
     </nav>
     <main>
-      <article>
-        <h1>Olá Marcos Alves</h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
-          qui esse ratione consequatur expedita unde ipsam quidem deserunt
-          exercitationem quo repellat non quisquam rem ullam nulla, reiciendis
-          animi enim similique.
-        </p>
-      </article>
-      <article>
+      <section class="home">
+        <div>
+          <h1>Olá, eu sou Marcos Alves</h1>
+          <p>Desenvolvedor Front-end</p>
+          <button>Fale Comigo</button>
+        </div>
+        <div>
+          <img src="#" alt="minha foto">
+        </div>
+      </section>
+      
+      <section class="about">
+            <div class="image">
+              <img src="#" alt="minha-foto">
+            </div>
+            <div class="about__content">
+              <header>Sobre mim</header>
+              
+                <p>Olá! Meu nome é Marcos e sou estudante de Análise e Desenvolvimento de Sistemas na Faculdade Cruzeiro do Sul. Sou apaixonado por tecnologia e desenvolvimento web, criando páginas e sistemas responsivos com layouts modernos e atrativos.
+                  Atualmente, estou focado no aprendizado contínuo, explorando tecnologias JavaScript para aprimorar minhas habilidades no desenvolvimento frontend. No futuro, meu objetivo é me tornar um desenvolvedor Full Stack, expandindo meu conhecimento tanto no frontend quanto no backend.
+              
+                  Estou sempre em busca de novos desafios e oportunidades para evoluir na área.</p>
+
+            </div>
+          
+        
+      </section>
+      <section>
         <h1>Projetos</h1>
-        <div class="__card">
-            <div class="__card_content">
+        <div class="card">
+            <div class="card__content">
                 <h1>Card</h1>
                 <img src="#" alt="card_img">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quas</p>
                 <p>Tecnologias utilizadas</p>
             </div>
-            <div class="__card_content">
+            <div class="card__content">
                 <h1>Card</h1>
                 <img src="#" alt="card_img">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quas</p>
                 <p>Tecnologias utilizadas</p>
             </div>
-            <div class="__card_content">
+            <div class="card__content">
                 <h1>Card</h1>
                 <img src="#" alt="card_img">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quas</p>
                 <p>Tecnologias utilizadas</p>
             </div>
         </div>
-      </article>
-      <article>
+      </section>
+      <section>
         <h1>Conhecimentos</h1>
-        <div class="__card_content">
+        <div class="card__content">
             <h1>Card</h1>
-            <img src="#" alt="card_img">
+            <img src="#" alt="card__img">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quas</p>
             <p>Tecnologias utilizadas</p>
             
-      </article>
-      <article>
+        </section>
+      <section>
         <h1>Fale comigo</h1>
         <p>marcos@email.com</p>
         <p>+55 15 99999-9999</p>
-      </article>
+      </section>
     </main>
     <footer>
         <div>
