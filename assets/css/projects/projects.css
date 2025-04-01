@@ -1,0 +1,24 @@
+.projects {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.projects h1 {
+  color: var(--cor-primaria);
+}
+
+.projects__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  border: 1px red solid;
+  width: 300px;
+  background-color: var(--cor-cinza-medio);
+}

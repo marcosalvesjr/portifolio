@@ -1,0 +1,26 @@
+.navigation {
+    background-color: #3d3d3d;
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navigation__menu {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navigation__menu li {
+    list-style: none;
+  }
+  
+  .navigation__menu li a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+  }
+  
+  .navigation__menu li a:hover {
+    color: var(--cor-secundaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+  }
+  

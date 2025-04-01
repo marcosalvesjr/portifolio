@@ -1,0 +1,30 @@
+.about {
+    background-color: var(--cor-cinza-medio);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid red;
+  }
+  
+  .about__content {
+    border: 1px solid red;
+  }
+  
+  .about img {
+    border: 1px solid red;
+  }
+  
+  .about__content header {
+    color: var(--cor-primaria);
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about__content p {
+    color: #fff;
+  }
