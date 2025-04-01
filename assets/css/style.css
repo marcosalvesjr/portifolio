@@ -15,6 +15,9 @@
   --cor-destaque: #ffd180;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: var(--cor-escura);
 }

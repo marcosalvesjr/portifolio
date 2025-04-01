@@ -1,4 +1,4 @@
-.knowledge {
+#knowledge {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,17 +7,16 @@
   gap: 2rem;
 }
 
-.knowledge .cards {
+#knowledge .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
-
-.knowledge h1 {
+#knowledge h1 {
   color: var(--cor-primaria);
 }
 
-.knowledge h3,
+#knowledge h3,
 p {
   color: #fff;
 }

@@ -1,4 +1,4 @@
-.projects {
+#projects {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   gap: 2rem;
 }
 
-.projects h1 {
+#projects h1 {
   color: var(--cor-primaria);
 }
 
