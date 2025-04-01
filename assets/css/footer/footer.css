@@ -1,0 +1,15 @@
+footer {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 5px;
+  border: 1px solid red;
+}

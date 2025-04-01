@@ -4,6 +4,7 @@
 @import url(projects/projects.css);
 @import url(knowledge/knowledge.css);
 @import url(contact/contact.css);
+@import url(footer/footer.css);
 
 :root {
   --cor-primaria: #f57c00;
