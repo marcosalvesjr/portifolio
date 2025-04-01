@@ -9,11 +9,20 @@
     padding-right: 1rem;
   }
   
+  .home h1{
+    font-size: 3rem;
+  }
+
+  .home p{
+    font-size: 1.5rem;
+  }
+
   .home button {
     margin-top: 1rem;
     border: solid 2px var(--cor-primaria);
     color: var(--cor-primaria);
     padding: 0.5rem 1rem;
+    font-size: 1.3rem;
   }
   
   .home button:hover {
