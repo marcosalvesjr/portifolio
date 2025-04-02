@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  background-color: var(--cor-cinza-medio);
 }
 
 #knowledge .cards {
@@ -12,8 +13,29 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+
+#knowledge .card {
+  border-radius: 25px;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.884);
+  width: 500px;
+  background-color: var(--cor-escura);
+  padding: 1.5rem;
+  text-align: center;
+}
+.knowledge__img {
+  width: 300px;
+}
 #knowledge h1 {
+  font-size: 4rem;
   color: var(--cor-primaria);
+}
+
+#knowledge h3 {
+  font-size: 2rem;
+}
+
+#knowledge p {
+  font-size: 1.3rem;
 }
 
 #knowledge h3,
