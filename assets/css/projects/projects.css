@@ -9,16 +9,31 @@
 
 #projects h1 {
   color: var(--cor-primaria);
+  font-size: 4rem;
 }
-
+#projects h2 {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 .projects__cards {
+  padding-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
+.projects__cards p {
+margin-top: 1rem;
+font-size: 1.3rem;
+text-align: center;
+}
 .card {
-  border: 1px red solid;
-  width: 300px;
+  border-radius: 25px;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.884);
+  width: 500px;
   background-color: var(--cor-cinza-medio);
+  padding: 1.5rem;
 }

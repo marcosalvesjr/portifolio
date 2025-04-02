@@ -5,18 +5,16 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 20px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border: 1px solid red;
+  padding-left: 8rem;
+  padding-right: 8rem;
+
 }
 
-.about__content {
-  border: 1px solid red;
-}
-
-#about img {
-  border: 1px solid red;
-  width: 600px;
+.image {
+  overflow: hidden;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.884);
+  width: 520px;
+  border-radius: 25px;
 }
 
 .about__content header {
@@ -28,5 +26,5 @@
 
 .about__content p {
   color: #fff;
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
