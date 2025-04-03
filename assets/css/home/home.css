@@ -8,12 +8,13 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
 .home__img {
+  
   border-radius: 25px;
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.884);
-  background-color: var(--cor-primaria);
+ 
   overflow: hidden;
-  
 }
 #home h1 {
   font-size: 3rem;
@@ -24,14 +25,14 @@
 }
 
 #home button {
-  margin-top: 1rem;
-  border: solid 2px var(--cor-primaria);
   color: var(--cor-primaria);
-  padding: 0.5rem 1rem;
-  font-size: 1.3rem;
+  border: 1px solid var(--cor-primaria);
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 15px;
 }
 
 #home button:hover {
-  border: solid 2px var(--cor-secundaria);
-  color: var(--cor-secundaria);
+  background-color: var(--cor-secundaria);
+  color: #fff;
 }

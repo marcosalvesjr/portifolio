@@ -1,7 +1,16 @@
 footer {
-  border: 1px solid red;
+  background-color: var(--cor-cinza-medio);
   display: flex;
   justify-content: space-between;
+}
+
+footer h1 {
+  color: var(--cor-cinza-claro);
+  padding-bottom: 2rem;
+}
+
+footer p {
+  font-size: 1.2rem;
 }
 
 .footer__links {
@@ -11,5 +20,8 @@ footer {
   align-items: center;
   gap: 1rem;
   padding: 5px;
-  border: 1px solid red;
+}
+
+.footer__links li a {
+  color: #fff;
 }
