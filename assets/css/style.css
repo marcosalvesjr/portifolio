@@ -1,23 +1,52 @@
-@import url(menu/menu.css);
-@import url(home/home.css);
-@import url(about/about.css);
-@import url(projects/projects.css);
-@import url(knowledge/knowledge.css);
-@import url(contact/contact.css);
-@import url(footer/footer.css);
-
 :root {
-  --cor-primaria: #f57c00;
-  --cor-secundaria: #ff9800;
-  --cor-escura: #0d0d0d;
-  --cor-cinza-medio: #3d3d3d;
-  --cor-cinza-claro: #b3b3b3;
-  --cor-destaque: #ffd180;
+  --color-primary: #85e4ff;
+  --color-secondary: #0e2a56;
+  --color-dark: #0d0d0d;
+  --color-gray-medium: #3d3d3d;
+  --color-gray-light: #b3b3b3;
+  --color-emphasis: #ff9800;
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 
+  font-family: sans-serif;
+}
 html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: var(--cor-escura);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+  padding-bottom: 2rem;
+  padding-right: 1rem;
+}
+
+button {
+  color: var(--color-secondary);
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 0.5rem 1.5rem;
+  border: var(--color-secondary) solid 2px;
+  border-radius: 25px;
+  background-color: var(--color-primary);
+}
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+#home .home__image {
+  margin: 2rem 0;
+  width: 250px;
+  justify-content: center;
+  align-items: center;
 }
