@@ -40,7 +40,9 @@ nav ul {
   padding-bottom: 2rem;
   padding-right: 1rem;
 }
-
+p{
+  color: #fff;
+}
 button {
   color: var(--color-secondary);
   font-size: 1rem;
@@ -94,7 +96,6 @@ button {
   display: flex;
   justify-content: center;
   width: 20rem;
-  
 }
 
 #about .container .content {
@@ -108,8 +109,34 @@ button {
 
 #about .container p {
   padding-top: 1rem;
-  color: #fff;
   max-width: 100%;
+}
+
+#projects {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects .container{
+  width: 100%;
+  text-align: center;
+}
+
+.projects-list{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+
+}
+.project{
+  padding: 1.5rem 1.5rem;
+}
+.project img{
+  width: 20rem;
 }
 
 @media (min-width: 768px) {
@@ -122,8 +149,7 @@ button {
   #about .container {
     flex-direction: row;
   }
-  #about .content{
+  #about .content {
     margin-left: 2rem;
   }
-  
 }
