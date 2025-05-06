@@ -1,8 +1,8 @@
 :root {
-  --color-primary: #85e4ff;
+  --color-primary: #fc7404;
   --color-secondary: #0e2a56;
-  --color-dark: #0d0d0d;
-  --color-gray-medium: #3d3d3d;
+  --color-dark: #252525;
+  --color-gray-medium: #353535;
   --color-gray-light: #b3b3b3;
   --color-emphasis: #ff9800;
 }
@@ -23,7 +23,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: var(--color-secondary);
+  background-color: var(--color-dark);
   color: var(--color-primary);
 }
 h1 {
@@ -44,229 +44,55 @@ h4 {
 p {
   font-size: 1.2rem;
   color: #fff;
+  text-indent: 1rem;
 }
 
 button {
-  font-size: 1.5rem;
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
+  padding: 1rem 1.5rem;
+  background-color: transparent;
   border: 1px solid var(--color-primary);
-  padding: 1rem 1.3rem;
-  border-radius: 30px;
-}
-
-button:hover {
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-  border: 1px solid var(--color-secondary);
+  border-radius: 25px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .container {
-  max-width: 1024px;
   margin: 0 auto;
-  border: 1px solid green;
+  max-width: 1024px;
+}
+header,
+#home,
+#about {
+  margin: 10px auto;
+  background-color: var(--color-gray-medium);
+  padding: 2rem;
+  border-radius: 25px;
+  max-width: 1024px;
 }
 
-/*hedaer*/
-.navigation {
-  padding: 2rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border: 1px solid;
+header .container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .navigation-links {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
-}
-
-/*home*/
-
-#home {
-  height: 100vh;
-  display: flex;
-  border: 1px solid yellow;
-  justify-content: center;
-  align-items: center;
-  max-width: 1024px;
-  margin: 0 auto;
+  gap: 2rem;
 }
 
 #home .container {
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
-}
-
-#home .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  border: 1px solid red;
-  width: calc(50% - 1rem);
-  max-height: 100vh;
+  align-items: center;
 }
 
 #home .home-img {
-  border: 1px solid red;
-  width: calc(50% - 1rem);
-  max-height: 100vh;
-  display: flex;
-  justify-content: center;
-  border-radius: 15px;
+  border-radius: 25px;
   overflow: hidden;
 }
-#home img {
-  width: 100%;
-}
 
-/*About*/
-#about {
-  margin: 0 auto;
-  max-width: 1024px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid green;
-}
-#about .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  padding: 2rem;
-}
-#about .about-img {
-  width: 50%;
-}
-
-#about .content {
-  width: 50%;
-}
-
-/*projects*/
-
-#projects {
-  height: 100vh;
-  border: 1px solid green;
-  max-width: 1024px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-#projects .container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-#projects .projects-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  border: 1px solid red;
-}
-.project {
-  border: 1px solid red;
-}
-
-/*KNOWLEDGE*/
-#knowledge {
-  margin: 0 auto;
-  height: 100vh;
-  max-width: 1024px;
-  display: flex;
-  align-items: center;
-  border: 1px solid green;
+#about h1 {
   text-align: center;
-  padding: 2rem;
-}
-
-#knowledge .knowledge-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-#knowledge .card {
-  border: 1px solid red;
-}
-
-#contact {
-  height: 100vh;
-  border: 1px solid green;
-  max-width: 1024px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer {
-  max-width: 1024px;
-  margin: 0 auto;
-  border: 1px solid red;
-}
-
-/*responsividade*/
-@media (max-width: 1024px) {
-  .navigation {
-    display: none;
-
-    /*HOME*/
-  }
-  #home {
-    min-height: 100vh;
-  }
-  #home .container {
-    max-width: 480px;
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 2rem;
-    gap: 2rem;
-  }
-  #home .content {
-    width: 95%;
-  }
-
-  #home .home-img {
-    width: 80%;
-  }
-
-  /*about*/
-  #about .container {
-    max-width: 480px;
-    flex-direction: column;
-  }
-
-  #about .about-img {
-    width: 90%;
-    max-height: 50%;
-  }
-  #about .content {
-    border: 1px solid red;
-    width: 90%;
-  }
-
-  /*PROJECTS*/
-  #projects .container {
-    max-width: 480px;
-  }
-
-  #projects .projects-list {
-    grid-template-columns: 1fr;
-  }
-  /*KNOWLEDGE*/
-  #knowledge .container {
-    max-width: 480px;
-  }
-
-  #knowledge .knowledge-list {
-    grid-template-columns: 1fr;
-  }
+  margin: 1rem 1.5rem;
 }
