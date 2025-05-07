@@ -44,7 +44,6 @@ h4 {
 p {
   font-size: 1.2rem;
   color: #fff;
-  text-indent: 1rem;
 }
 
 button {
@@ -63,7 +62,11 @@ button {
 }
 header,
 #home,
-#about {
+#about,
+#projects,
+#knowledge,
+#contact,
+footer {
   margin: 10px auto;
   background-color: var(--color-gray-medium);
   padding: 2rem;
@@ -95,4 +98,44 @@ header .container {
 #about h1 {
   text-align: center;
   margin: 1rem 1.5rem;
+}
+
+#projects .project {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+#projects .img-project {
+  overflow: hidden;
+  border-radius: 25px;
+}
+.project-content,
+.img-project {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#knowledge ul {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#knowledge ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#knowledge ul li .knowledge-img {
+  width: 100px;
+}
+
+footer {
+  text-align: center;
 }
