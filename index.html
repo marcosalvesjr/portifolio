@@ -12,15 +12,19 @@
       <header>
         <div class="container">
           <div><h3>Marcos Alves</h3></div>
-          <nav class="navigation">
+          <nav id="navigation" class="navigation">
             <ul class="navigation-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">Sobre mim</a></li>
-              <li><a href="#projects">Projetos</a></li>
-              <li><a href="#knowledge">Conhecimentos</a></li>
-              <li><a href="#contact">Contato</a></li>
+              <li class="hide"><span onclick="showMenu()">Fechar</span></li>
+              <li><a onclick="showMenu()" href="#home">Home</a></li>
+              <li><a onclick="showMenu()" href="#about">Sobre mim</a></li>
+              <li><a onclick="showMenu()" href="#projects">Projetos</a></li>
+              <li><a onclick="showMenu()" href="#knowledge">Conhecimentos</a></li>
+              <li><a onclick="showMenu()" href="#contact">Contato</a></li>
             </ul>
           </nav>
+          <button id="menu-toggle" class="hamburger" onclick="showMenu()">
+            ☰
+          </button>
         </div>
       </header>
 
@@ -37,7 +41,6 @@
             <img
               src="assets/img/IMG_20250325_220952_882.webp"
               alt="Foto Marcos Alves"
-              width="300px"
             />
           </div>
         </div>
@@ -81,8 +84,10 @@
             <h1>RickPedia</h1>
             <p>Projeto realizado para o teste na empresa Dorotech.</p>
             <p>React - TypeScript - Tailwind CSS</p>
-            <a href="#">Projeto</a>
-            <a href="#">Código</a>
+            <div style="display: flex; gap: 2rem;">
+              <a href="#">Projeto</a>
+              <a href="#">Código</a>
+            </div>
           </div>
         </div>
       </section>
@@ -93,7 +98,6 @@
       <section id="knowledge">
         <h1>Conhecimentos</h1>
         <ul>
-
           <li>
             <div class="knowledge-img"><img src="assets/img/icons/html5-original.svg" alt="imagem html5"></div>
             <p>HTML 5</p>
@@ -149,6 +153,7 @@
         <p>&copy; 2025 Marcos Alves. Todos os direitos reservados.</p>
       </footer>
     </main>
+    <script src="assets/js/scripts.js"></script>
   </body>
   <!-- <script>
     window.alert(

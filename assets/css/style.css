@@ -26,6 +26,14 @@ body {
   background-color: var(--color-dark);
   color: var(--color-primary);
 }
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 h1 {
   font-size: 2.5rem;
   font-weight: bolder;
@@ -58,8 +66,13 @@ button {
 
 .container {
   margin: 0 auto;
-  max-width: 1024px;
+  width: 100%;
 }
+
+.hide{
+  display: none;
+}
+
 header,
 #home,
 #about,
@@ -91,8 +104,13 @@ header .container {
 }
 
 #home .home-img {
+  width: 350px;
   border-radius: 25px;
   overflow: hidden;
+}
+
+#home .home-img img {
+  object-fit: cover;
 }
 
 #about h1 {
@@ -138,4 +156,62 @@ header .container {
 
 footer {
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  header .container {
+    align-items: center;
+  }
+  .navigation {
+    display: none;
+  }
+  .navigation .navigation-links {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--color-gray-medium);
+    padding: 2rem;
+    border-radius: 25px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  #home,
+  #about,
+  #projects,
+  #contact,
+  #knowledge,
+  footer,
+  header {
+    max-width: 480px;
+  }
+  #home .container {
+    flex-direction: column-reverse;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  #home .home-img {
+    border-radius: 50%;
+    width: 230px;
+    margin-bottom: 2rem;
+  }
+  #projects .project {
+    flex-direction: column;
+  }
+  #projects .project .img-project,
+  .project-content {
+    width: 100%;
+  }
+  #knowledge ul {
+    overflow-x: auto;
+  }
+  .show {
+    display: flex;
+  }
+  .hide {
+    display: block;
+  }
 }
