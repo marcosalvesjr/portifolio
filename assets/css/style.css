@@ -1,10 +1,10 @@
 :root {
   --color-primary: #fc7404;
-  --color-secondary: #0e2a56;
   --color-dark: #252525;
   --color-gray-medium: #353535;
+  --color-gray-medium-t: rgb(53, 53, 53, 0.6);
   --color-gray-light: #b3b3b3;
-  --color-emphasis: #ff9800;
+  --color-emphasis: #fc5000;
 }
 * {
   padding: 0;
@@ -25,6 +25,16 @@ html {
 body {
   background-color: var(--color-dark);
   color: var(--color-primary);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+header.transparent {
+  background-color: var(--color-gray-medium-t); /* branco semi-transparente */
+  backdrop-filter: blur(8px); /* opcional: efeito de vidro */
 }
 .hamburger {
   display: none;
@@ -50,13 +60,14 @@ h4 {
   color: #fff;
 }
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #fff;
 }
 
 button {
   padding: 1rem 1.5rem;
-  background-color: transparent;
+  margin-top: 2rem;
+  background-color: var(--color-primary);
   border: 1px solid var(--color-primary);
   border-radius: 25px;
   color: white;
@@ -64,12 +75,30 @@ button {
   font-weight: bold;
 }
 
+button:hover {
+  background-color: var(--color-emphasis);
+  border: solid 1px var(--color-emphasis);
+}
+
+button > a:hover {
+  color: #fff;
+}
+
+a {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+a:hover {
+  color: var(--color-emphasis);
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
@@ -113,7 +142,10 @@ header .container {
   object-fit: cover;
 }
 
-#about h1 {
+#about h1,
+#projects > h1,
+#knowledge h1,
+#contact h1 {
   text-align: center;
   margin: 1rem 1.5rem;
 }
@@ -154,11 +186,21 @@ header .container {
   width: 100px;
 }
 
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 footer {
   text-align: center;
 }
 
 @media (max-width: 768px) {
+  a {
+    font-size: 20px;
+    font-weight: bold;
+  }
   header .container {
     align-items: center;
   }
@@ -173,6 +215,7 @@ footer {
     background-color: var(--color-gray-medium);
     padding: 2rem;
     border-radius: 25px;
+    width: 80%;
   }
 
   .hamburger {
@@ -187,10 +230,14 @@ footer {
   header {
     max-width: 480px;
   }
+
   #home .container {
     flex-direction: column-reverse;
     max-width: 480px;
     margin: 0 auto;
+  }
+  #home button {
+    display: none;
   }
 
   #home .home-img {
@@ -206,7 +253,7 @@ footer {
     width: 100%;
   }
   #knowledge ul {
-    overflow-x: auto;
+    flex-wrap: wrap;
   }
   .show {
     display: flex;
