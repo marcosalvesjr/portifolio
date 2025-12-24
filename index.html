@@ -3,186 +3,180 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Marcos Alves Portifólio</title>
+    <title>Marcos Alves | Desenvolvedor Front-end</title>
   </head>
   <body>
-    <main>
-      <header>
-        <div class="container">
-          <nav id="navigation" class="navigation">
-            <ul class="navigation-links">
-              <li class="hide"><span onclick="showMenu()">Fechar</span></li>
-              <li><a onclick="showMenu()" href="#home">Home</a></li>
-              <li><a onclick="showMenu()" href="#about">Sobre mim</a></li>
-              <li><a onclick="showMenu()" href="#projects">Projetos</a></li>
-              <li><a onclick="showMenu()" href="#knowledge">Conhecimentos</a></li>
-              <li><a onclick="showMenu()" href="#contact">Contato</a></li>
-            </ul>
-          </nav>
-          <button id="menu-toggle" class="hamburger" onclick="showMenu()">
-            ☰
-          </button>
-        </div>
-      </header>
+    <header id="header">
+      <div class="container header-container">
+        <a href="#home" class="logo">Marcos<span>.dev</span></a>
+        
+        <nav id="navigation" class="navigation">
+          <ul class="navigation-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">Sobre</a></li>
+            <li><a href="#projects" class="nav-link">Projetos</a></li>
+            <li><a href="#knowledge" class="nav-link">Skills</a></li>
+            <li><a href="#contact" class="nav-link">Contato</a></li>
+          </ul>
+          <button id="close-menu" class="close-btn" aria-label="Fechar menu">&times;</button>
+        </nav>
+        
+        <button id="menu-toggle" class="hamburger" aria-label="Abrir menu">
+          ☰
+        </button>
+      </div>
+    </header>
 
-      <!--HOME ABERTURA-->
+    <main>
       <section id="home">
-        <div class="container">
+        <div class="container home-container">
           <div class="content">
-            <h4>Olá, mundo!</h4>
+            <span class="greeting">Olá, mundo! 👋</span>
             <h3>Eu sou Marcos Alves</h3>
-            <h1>Desenvolvedor Front-end</h1>
-            <button><a href="#contact">Fale comigo</a></button>
+            <h1>Desenvolvedor <span class="highlight">Front-end</span></h1>
+            <p>Transformando ideias em experiências digitais modernas e performáticas.</p>
+            <div class="buttons">
+                <a href="#contact" class="btn primary">Fale comigo</a>
+                <a href="#projects" class="btn secondary">Ver projetos</a>
+            </div>
           </div>
 
           <div class="home-img">
-            <img
-              src="assets/img/IMG_20250325_220952_882.webp"
-              alt="Foto Marcos Alves"
-            />
+            <div class="img-wrapper">
+                <img src="assets/img/IMG_20250325_220952_882.webp" alt="Foto de Marcos Alves" />
+            </div>
           </div>
         </div>
       </section>
-      <!--HOME FECHAMENTO-->
 
-      <!--ABOUT ABERTURA-->
       <section id="about">
-        <div class="content-about">
-          <h1>Sobre mim</h1>
-          <p>
-            Sou estudante de Análise e Desenvolvimento de Sistemas na Faculdade
-            Cruzeiro do Sul.
-          </p>
-          <p>
-            Gosto muito de desenvolver páginas e sistemas responsivos com
-            layouts modernos e atrativos. Atualmente, estou focado no
-            aprendizado, explorando tecnologias para aprimorar minhas
-            habilidades no desenvolvimento frontend.
-          </p>
-          <p>
-            No futuro, meu objetivo é me tornar um desenvolvedor Full Stack,
-            expandindo meu conhecimento tanto no frontend quanto no backend.
-          </p>
-          <p>
-            Estou sempre em busca de novos desafios e oportunidades para evoluir
-            na área.
-          </p>
-        </div>
-      </section>
-      <!--ABOUT FECHAMENTO-->
-
-      <!--PROJECTS ABERTURA-->
-      <section id="projects">
-        <h1>Projetos</h1>
-        <div class="project">
-          <div class="img-project">
-            <img src="assets/img/prjrickandmorty.png" alt="Imagem do peojeto" />
-          </div>
-          <div class="project-content">
-            <h2>RickPedia</h2>
-            <h4>Descrição:</h4>
-            <p>Este projeto foi desenvolvido como parte de um teste técnico para a empresa <span><a href="https://www.dorotech.com.br/" rel="noopener noreferrer" target="_blank">Dorotech</a></span>, utilizando a API pública do Rick and Morty. A aplicação permite ao usuário filtrar personagens por diferentes critérios, além de utilizar uma barra de busca para localizar personagens específicos pelo nome.
+        <div class="container">
+          <h2 class="section-title">Sobre mim</h2>
+          <div class="about-content">
+            <p>
+              Sou estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> na Faculdade Cruzeiro do Sul. 
+              Apaixonado por criar interfaces que unem estética e funcionalidade.
             </p>
             <p>
-              Ao clicar no nome de um personagem, um modal é exibido com informações detalhadas como espécie, origem, status e imagem.
+               Atualmente, meu foco é dominar o ecossistema <strong>React</strong> e suas melhores práticas. 
+               Gosto de escrever código limpo e criar layouts responsivos que funcionam bem em qualquer dispositivo.
             </p>
-            <h4>Técnologias utilizadas:</h4>
-            <p>React - TypeScript - Tailwind CSS</p>
-            <div style="display: flex; gap: 2rem;">
-              <a href="https://marcosalvesjr.github.io/react-desafio-typescript/?pagenumber=1&charactersToShow=20" target="_blank" referrerpolicy="noopner noreferrer">Projeto</a>
-              <a href="https://github.com/marcosalvesjr/react-desafio-typescript?tab=readme-ov-file" target="_blank" rel="noopner noreferrer">Código</a>
-            </div>
-          </div>
-        </div>
-        <div class="project">
-          <div class="img-project">
-            <img src="assets/img/prj-airbnb.png" alt="Imagem do peojeto" />
-          </div>
-          <div class="project-content">
-            <h2>Clone AirBnb</h2>
-            <h4>Descrição:</h4>
-            <p>Projeto desenvolvido durante um curso, com o objetivo de praticar tecnologias modernas de front-end. Trata-se de um clone da página inicial do Airbnb, construído com React + TypeScript, usando Next.js para rotas e renderização server-side, e Tailwind CSS para a estilização responsiva.
+            <p>
+              Meu objetivo de carreira é evoluir para <strong>Full Stack</strong>, expandindo meus horizontes para o desenvolvimento backend no futuro próximo.
             </p>
-            <p>Os dados das propriedades são consumidos de uma API fornecida pela Codans, simulando listagens reais.</p>
-            <h4>Técnologias utilizadas: </h4>
-            <p>React - TypeScript - Tailwind CSS</p>
-            <div style="display: flex; gap: 2rem;">
-              <a href="https://prj-airbnb-1rqd.vercel.app/" target="_blank" rel="noopner noreferrer">Projeto</a>
-              <a href="https://github.com/marcosalvesjr/prj-airbnb" rel="noopner noreferrer" target="_blank">Código</a>
-            </div>
           </div>
         </div>
       </section>
-      <!--PROJECTS FECHAMENTO-->
 
-      <!--KNOWLEDGE ABERTURA-->
-      
-      <section id="knowledge">
-        <h1>Conhecimentos</h1>
-        <ul>
-          <li>
-            <div class="knowledge-img"><img src="assets/img/icons/html5-original.svg" alt="imagem html5"></div>
-            <p>HTML 5</p>
-          </li>
-
-          <li>
-            <div class="knowledge-img"><img src="assets/img/icons/css3-original.svg" alt="imagem ccs3"></div>
-            <p>CSS 3</p>
-          </li>
-
-          <li>
-            <div class="knowledge-img"><img src="assets/img/icons/javascript-original.svg" alt="imagem JavaScript"></div>
-            <p>Java Script</p>
-          </li>
-
-          <li>
-            <div class="knowledge-img"><img src="assets/img/icons/typescript-original.svg" alt="imagem TypeScript"></div>
-            <p>Type Script</p>
-          </li>
-
-          <li>
-            <div class="knowledge-img"><img src="assets/img/icons/react-original.svg" alt="imagem React"></div>
-            <p>React</p>
-          </li>
-
-          <li>
-            <div class="knowledge-img"><img src="assets/img/icons/git-original.svg" alt="imagem git"></div>
-            <p>Git</p>
-          </li>
-
-          <li>
-            <div class="knowledge-img"><img src="assets/img/icons/github-original.svg" alt="imagem github"></div>
-            <p>Git Hub</p>
-          </li>
+      <section id="projects">
+        <div class="container">
+          <h2 class="section-title">Projetos Recentes</h2>
           
-        </ul>
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="img-project">
+                <img src="assets/img/prjrickandmorty.png" alt="Preview do projeto RickPedia" />
+              </div>
+              <div class="project-info">
+                <h3>RickPedia</h3>
+                <p>Aplicação que consome a API do Rick and Morty, permitindo busca e filtragem avançada de personagens.</p>
+                <div class="techs">
+                    <span>React</span>
+                    <span>TypeScript</span>
+                    <span>Tailwind CSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://marcosalvesjr.github.io/react-desafio-typescript/?pagenumber=1&charactersToShow=20" target="_blank" class="link-btn">Demo</a>
+                  <a href="https://github.com/marcosalvesjr/react-desafio-typescript?tab=readme-ov-file" target="_blank" class="link-btn outline">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="img-project">
+                <img src="assets/img/prj-airbnb.png" alt="Preview do projeto Airbnb Clone" />
+              </div>
+              <div class="project-info">
+                <h3>Clone AirBnb</h3>
+                <p>Clone da interface do Airbnb focado em componentização, rotas dinâmicas e estilização responsiva.</p>
+                <div class="techs">
+                    <span>Next.js</span>
+                    <span>TypeScript</span>
+                    <span>Tailwind CSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://prj-airbnb-1rqd.vercel.app/" target="_blank" class="link-btn">Demo</a>
+                  <a href="https://github.com/marcosalvesjr/prj-airbnb" target="_blank" class="link-btn outline">GitHub</a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <!--KNOWLEDGE FECHAMENTO-->
+      <section id="knowledge">
+        <div class="container">
+          <h2 class="section-title">Tecnologias</h2>
+          <div class="skills-grid">
+            <div class="skill-card">
+                <img src="assets/img/icons/html5-original.svg" alt="HTML5">
+                <p>HTML5</p>
+            </div>
+            <div class="skill-card">
+                <img src="assets/img/icons/css3-original.svg" alt="CSS3">
+                <p>CSS3</p>
+            </div>
+            <div class="skill-card">
+                <img src="assets/img/icons/javascript-original.svg" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-card">
+                <img src="assets/img/icons/typescript-original.svg" alt="TypeScript">
+                <p>TypeScript</p>
+            </div>
+            <div class="skill-card">
+                <img src="assets/img/icons/react-original.svg" alt="React">
+                <p>React</p>
+            </div>
+            <div class="skill-card">
+                <img src="assets/img/icons/git-original.svg" alt="Git">
+                <p>Git</p>
+            </div>
+             <div class="skill-card">
+                <img src="assets/img/icons/github-original.svg" alt="GitHub">
+                <p>GitHub</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <!--CONTACT FECHAMENTO-->
-<section id="contact">
-  <h1>Contato</h1>
-  <p>E-mail: marcos.aurelio.jr@live.com</p>
-  <p>Cel: 55 15 99754-3185</p>
-  <button><a target="_blank" rel="noopner noreferrer" href="https://wa.link/zg3se7">WhatsApp</a></button>
-
-</section>
-      <!--CONTACT FECHAMENTO-->
-
-      <footer>
-        <p>&copy; 2025 Marcos Alves. Todos os direitos reservados.</p>
-      </footer>
+      <section id="contact">
+        <div class="container contact-container">
+          <h2 class="section-title">Vamos conversar?</h2>
+          <p>Estou disponível para novos projetos e oportunidades.</p>
+          
+          <div class="contact-links">
+              <a href="mailto:marcos.aurelio.jr@live.com" class="contact-item">
+                📧 marcos.aurelio.jr@live.com
+              </a>
+              <a href="https://wa.link/zg3se7" target="_blank" class="contact-item whatsapp">
+                📱 (15) 99754-3185
+              </a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <p>&copy; 2025 Marcos Alves. Feito com 🧡 e código.</p>
+    </footer>
+
     <script src="assets/js/scripts.js"></script>
   </body>
-  <!-- <script>
-    window.alert(
-      "Estamos em fase de desenvolvimento, por isso algumas funcionalidades não estão funcionando. Agradecemos sua compreensão. :)"
-    );
-  </script>
-  -->
 </html>
