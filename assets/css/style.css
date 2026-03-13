@@ -1,13 +1,33 @@
+/* === THEME VARIABLES === */
 :root {
+  /* Default: LIGHT MODE */
   --color-primary: #fc7404;
   --color-primary-dark: #cc5e03;
-  --color-bg: #121214;
-  --color-bg-secondary: #202024;
-  --color-text: #e1e1e6;
-  --color-text-secondary: #a8a8b3;
-  --border-radius: 8px;
+  
+  --color-bg: #f8fafc; /* Light gray background */
+  --color-bg-secondary: #ffffff; /* White cards */
+  --color-text: #1e293b; /* Slate 800 */
+  --color-text-secondary: #64748b; /* Slate 500 */
+  
+  --border-color: rgba(0, 0, 0, 0.05);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --glow-color: rgba(252, 116, 4, 0.1);
+  
+  --border-radius: 12px;
   --font-title: 'Poppins', sans-serif;
   --font-text: 'Inter', sans-serif;
+}
+
+[data-theme="dark"] {
+  /* DARK MODE */
+  --color-bg: #0f172a; /* Slate 900 */
+  --color-bg-secondary: #1e293b; /* Slate 800 */
+  --color-text: #f8fafc; /* Slate 50 */
+  --color-text-secondary: #94a3b8; /* Slate 400 */
+  
+  --border-color: rgba(255, 255, 255, 0.05);
+  --header-bg: rgba(15, 23, 42, 0.85);
+  --glow-color: rgba(252, 116, 4, 0.15);
 }
 
 * {
@@ -26,6 +46,24 @@ body {
   color: var(--color-text);
   font-family: var(--font-text);
   line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease; /* Transição suave de tema */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fundo Glow Dinâmico */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at top, var(--glow-color) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  transition: background 0.4s ease;
 }
 
 /* Utilitários */
@@ -54,7 +92,7 @@ img {
 .section-title {
   font-family: var(--font-title);
   font-size: 2rem;
-  color: #fff;
+  color: var(--color-text);
   text-align: center;
   margin-bottom: 3rem;
   position: relative;
@@ -80,12 +118,20 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(18, 18, 20, 0.8);
-  backdrop-filter: blur(10px); /* Efeito de vidro */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  height: 70px;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(12px); /* Efeito glassmorphism melhorado */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  height: 80px;
   display: flex;
   align-items: center;
+  transition: height 0.3s ease, background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+  height: 70px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-bg-secondary); /* Levemente mais sólido no scroll */
 }
 
 .header-container {
@@ -98,7 +144,7 @@ header {
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 1.5rem;
-  color: #fff;
+  color: var(--color-text);
 }
 
 .logo span {
@@ -123,9 +169,46 @@ header {
   display: none;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-text);
   font-size: 1.8rem;
   cursor: pointer;
+  transition: color 0.3s;
+}
+
+.hamburger:hover, .close-btn:hover {
+    color: var(--color-primary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Botão de Tema */
+.theme-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s, transform 0.3s;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.theme-btn:hover {
+  color: var(--color-primary);
+  background-color: var(--glow-color);
+  transform: rotate(15deg);
+}
+
+/* Foco Acessível (geral para botões/links) */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
 }
 
 /* HOME */
@@ -144,7 +227,7 @@ header {
 
 .greeting {
   display: inline-block;
-  background-color: rgba(252, 116, 4, 0.1);
+  background-color: var(--glow-color);
   color: var(--color-primary);
   padding: 5px 15px;
   border-radius: 20px;
@@ -157,7 +240,8 @@ header {
   font-size: 3rem;
   line-height: 1.1;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--color-text);
+  min-height: 80px; /* Para o typewriter não 'pular' */
 }
 
 #home h3 {
@@ -175,6 +259,7 @@ header {
   color: var(--color-text-secondary);
   margin-bottom: 2rem;
   max-width: 450px;
+  transition: color 0.4s ease;
 }
 
 .buttons {
@@ -227,9 +312,16 @@ header {
   background-color: var(--color-bg-secondary);
   padding: 2.5rem;
   border-radius: var(--border-radius);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
   max-width: 800px;
   margin: 0 auto;
+  box-shadow: 0 10px 30px -10px var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -20px rgba(252, 116, 4, 0.3);
 }
 
 .about-content p {
@@ -252,13 +344,15 @@ header {
   background-color: var(--color-bg-secondary);
   border-radius: var(--border-radius);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s, border-color 0.3s;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px -15px rgba(0,0,0,0.1);
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   border-color: var(--color-primary);
+  box-shadow: 0 20px 40px -20px var(--glow-color);
 }
 
 .img-project {
@@ -283,7 +377,7 @@ header {
 
 .project-info h3 {
   font-family: var(--font-title);
-  color: #fff;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
 }
 
@@ -304,7 +398,7 @@ header {
 
 .techs span {
   font-size: 0.75rem;
-  background-color: rgba(252, 116, 4, 0.1);
+  background-color: var(--glow-color);
   color: var(--color-primary);
   padding: 2px 8px;
   border-radius: 4px;
@@ -351,13 +445,15 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: 0.3s;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
   border-color: var(--color-primary);
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: var(--glow-color);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px -10px var(--glow-color);
 }
 
 .skill-card img {
@@ -416,7 +512,7 @@ footer {
   padding: 2rem;
   color: var(--color-text-secondary);
   font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
 }
 
 /* MEDIA QUERIES (Mobile) */
@@ -479,4 +575,69 @@ footer {
   #home h1 {
     font-size: 2.2rem;
   }
+}
+
+/* --- Scroll Animation Classes --- */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Variantes de Reveal */
+.fade-bottom {
+  transform: translateY(40px);
+}
+
+.fade-left {
+  transform: translateX(-40px);
+}
+
+.scale-in {
+  transform: scale(0.9);
+}
+
+/* Delays para lista */
+.delay-1 { transition-delay: 100ms; }
+.delay-2 { transition-delay: 200ms; }
+.delay-3 { transition-delay: 300ms; }
+.delay-4 { transition-delay: 400ms; }
+.delay-5 { transition-delay: 500ms; }
+.delay-6 { transition-delay: 600ms; }
+.delay-7 { transition-delay: 700ms; }
+
+/* --- Back to Top Button --- */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background-color 0.3s;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(252, 116, 4, 0.4);
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px);
 }
